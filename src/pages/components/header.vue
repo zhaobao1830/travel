@@ -20,7 +20,7 @@
   }
 </script>
 
-<style lang="stylus" scoped>
+<style scoped lang="stylus" rel="stylesheet/stylus">
   @import "~styles/varibles"
 
   .header
