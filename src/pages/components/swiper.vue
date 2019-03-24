@@ -43,7 +43,7 @@
     overflow: hidden
     width: 100%
     height: 0
-    padding-bottom: 31.25%
+    padding-bottom: 26.67%
     background-color: #eee
     >>> .swiper-pagination-bullet-active
       background: #fff
