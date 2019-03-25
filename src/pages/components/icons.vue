@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div
           class="icon"
@@ -67,7 +67,10 @@
             imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
             desc: '景点门票'
           }
-        ]
+        ],
+        swiperOption: {
+          loop: true // 支持循环轮播
+        }
       }
     },
     computed: {
