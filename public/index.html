@@ -9,6 +9,13 @@
     <title>travel</title>
   </head>
   <body>
+    <script>
+      var deviceWidth = document.documentElement.clientWidth | document.body.clientWidth
+      if (deviceWidth > 750) {
+        deviceWidth = 750
+      }
+      document.documentElement.style.fontSize = deviceWidth / 7.5 + 'px'
+    </script>
     <noscript>
       <strong>We're sorry but travel doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
