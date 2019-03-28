@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末游推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of weekendList" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl">
         </div>
@@ -18,34 +18,12 @@
 <script>
   export default {
     name: 'HomeWeekend',
-    data () {
-      return {
-        recommendList: [
-          {
-            id: '0001',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/ed/ed4079d797a78d28a3.water.jpg_200x200_53b1d509.jpg',
-            title: '榆次老城',
-            desc: '榆次老城欢迎您'
-          },
-          {
-            id: '0002',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/ed/ed4079d797a78d28a3.water.jpg_200x200_53b1d509.jpg',
-            title: '榆次老城',
-            desc: '榆次老城欢迎您'
-          },
-          {
-            id: '0003',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/ed/ed4079d797a78d28a3.water.jpg_200x200_53b1d509.jpg',
-            title: '榆次老城',
-            desc: '榆次老城欢迎您'
-          },
-          {
-            id: '0004',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/ed/ed4079d797a78d28a3.water.jpg_200x200_53b1d509.jpg',
-            title: '榆次老城',
-            desc: '榆次老城欢迎您'
-          }
-        ]
+    props: {
+      weekendList: {
+        type: Array,
+        default: () => {
+          return []
+        }
       }
     }
   }

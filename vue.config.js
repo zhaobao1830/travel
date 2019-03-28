@@ -1,7 +1,8 @@
 const webpack = require('webpack')
 const path = require('path')
-const appData = require('./mock/index.json')
-const indexData = appData.data
+const indexAppData = require('./mock/index.json')
+const cityAppData = require('./mock/city.json')
+const detailAppData = require('./mock/detail.json')
 
 const devProxy = ['/api'] // 代理
 
@@ -31,7 +32,19 @@ module.exports = {
       app.get('/api/index', function (req, res) {
         res.json({
           errno: 0,
-          data: indexData
+          data: indexAppData
+        })
+      })
+      app.get('/api/city', function (req, res) {
+        res.json({
+          errno: 0,
+          data: cityAppData
+        })
+      })
+      app.get('/api/detail', function (req, res) {
+        res.json({
+          errno: 0,
+          data: detailAppData
         })
       })
     },

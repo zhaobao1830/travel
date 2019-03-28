@@ -19,34 +19,12 @@
 <script>
   export default {
     name: 'HomeRecommend',
-    data () {
-      return {
-        recommendList: [
-          {
-            id: '0001',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/ed/ed4079d797a78d28a3.water.jpg_200x200_53b1d509.jpg',
-            title: '榆次老城',
-            desc: '榆次老城欢迎您'
-          },
-          {
-            id: '0002',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/ed/ed4079d797a78d28a3.water.jpg_200x200_53b1d509.jpg',
-            title: '榆次老城',
-            desc: '榆次老城欢迎您'
-          },
-          {
-            id: '0003',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/ed/ed4079d797a78d28a3.water.jpg_200x200_53b1d509.jpg',
-            title: '榆次老城',
-            desc: '榆次老城欢迎您'
-          },
-          {
-            id: '0004',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/ed/ed4079d797a78d28a3.water.jpg_200x200_53b1d509.jpg',
-            title: '榆次老城',
-            desc: '榆次老城欢迎您'
-          }
-        ]
+    props: {
+      recommendList: {
+        type: Array,
+        default: () => {
+          return []
+        }
       }
     }
   }

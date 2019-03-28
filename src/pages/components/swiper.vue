@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="showSwiper">
       <!-- slides -->
       <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl"/>
@@ -13,26 +13,25 @@
 <script>
   export default {
     name: 'HomeSwiper',
+    props: {
+      swiperList: {
+        type: Array,
+        default: () => {
+          return []
+        }
+      }
+    },
     data () {
       return {
         swiperOption: {
           pagination: '.swiper-pagination',
           loop: true // 支持循环轮播
-        },
-        swiperList: [
-          {
-            id: '0001',
-            imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/d7bbc21db442366a882e04ddc984669a.jpg_750x200_85e640d9.jpg'
-          },
-          {
-            id: '0002',
-            imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/ed5f4115226306e48e6fad106a038afe.jpg_750x200_64df48d6.jpg'
-          },
-          {
-            id: '0003',
-            imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20192/9f73976e40c4ef845cabe0efc0269ebb.jpg_750x200_aab92b7a.jpg'
-          }
-        ]
+        }
+      }
+    },
+    computed: {
+      showSwiper () {
+        return this.swiperList.length
       }
     }
   }

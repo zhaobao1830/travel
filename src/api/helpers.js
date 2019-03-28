@@ -8,9 +8,7 @@ export function get(url) {
       params
     }).then((res) => {
       const { errno, data } = res.data
-      console.log(data)
       if (errno === ERR_OK) {
-        console.log('ttttttttttttt')
         return data
       }
     }).catch((e) => {})

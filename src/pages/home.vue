@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <home-header></home-header>
-    <home-swiper></home-swiper>
-    <home-icons></home-icons>
-    <home-recommend></home-recommend>
-    <home-weekend></home-weekend>
+    <home-header :city="city"></home-header>
+    <home-swiper :swiperList="swiperList"></home-swiper>
+    <home-icons :iconList="iconList"></home-icons>
+    <home-recommend :recommendList="recommendList"></home-recommend>
+    <home-weekend :weekendList="weekendList"></home-weekend>
   </div>
 </template>
 
@@ -14,21 +14,35 @@
   import HomeIcons from './components/icons'
   import HomeRecommend from './components/recommend'
   import HomeWeekend from './components/weekend'
-  import { getIndex } from '../api'
+  import { getIndex, getCity, getDDetail } from '../api'
 
   export default {
     name: 'home',
+    data () {
+      return {
+        city: '',
+        swiperList: [],
+        iconList: [],
+        recommendList: [],
+        weekendList: []
+      }
+    },
     mounted () {
-      this.getHomeInfo(
-        getIndex({})
-          .then((inFor) => {
-            console.log(inFor)
-          })
-      )
+      this.getHomeIndex()
     },
     methods: {
-      getHomeInfo () {},
-      getHomeInfoSucc () {}
+      getHomeIndex () {
+        getIndex({})
+          .then((res) => {
+            if (res.ret) {
+              this.city = res.data.city
+              this.swiperList = res.data.swiperList
+              this.iconList = res.data.iconList
+              this.recommendList = res.data.recommendList
+              this.weekendList = res.data.weekendList
+            }
+          })
+      }
     },
     components: {
       HomeHeader,
