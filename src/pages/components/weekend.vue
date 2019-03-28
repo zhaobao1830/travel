@@ -21,9 +21,7 @@
     props: {
       weekendList: {
         type: Array,
-        default: () => {
-          return []
-        }
+        default: () => []
       }
     }
   }

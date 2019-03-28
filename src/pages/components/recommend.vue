@@ -22,9 +22,7 @@
     props: {
       recommendList: {
         type: Array,
-        default: () => {
-          return []
-        }
+        default: () => []
       }
     }
   }

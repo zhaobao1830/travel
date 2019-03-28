@@ -16,9 +16,7 @@
     props: {
       swiperList: {
         type: Array,
-        default: () => {
-          return []
-        }
+        default: () => []
       }
     },
     data () {

@@ -22,9 +22,7 @@
     props: {
       iconList: {
         type: Array,
-        default: () => {
-          return []
-        }
+        default: () => []
       }
     },
     data () {
