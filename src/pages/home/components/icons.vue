@@ -28,8 +28,7 @@
     data () {
       return {
         swiperOption: {
-          pagination: '.swiper-pagination',
-          loop: true // 支持循环轮播
+          pagination: '.swiper-pagination'
         }
       }
     },

@@ -14,7 +14,7 @@
   import HomeIcons from './components/icons'
   import HomeRecommend from './components/recommend'
   import HomeWeekend from './components/weekend'
-  import { getIndex, getCity, getDDetail } from '../api'
+  import { getIndex, getCity, getDDetail } from '@/api'
 
   export default {
     name: 'home',
