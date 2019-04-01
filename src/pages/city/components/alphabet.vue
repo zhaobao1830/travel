@@ -1,6 +1,13 @@
 <template>
   <ul class="list">
-    <li class="item" v-for="(item, key) of cities" :key="key">{{key}}</li>
+    <li
+      class="item"
+      v-for="(item, key) of cities"
+      :key="key"
+      @click="handleletterClick"
+    >
+      {{key}}
+    </li>
   </ul>
 </template>
 
@@ -11,6 +18,11 @@
       cities: {
         type: Object,
         default: () => {}
+      }
+    },
+    methods: {
+      handleletterClick (e) {
+        this.$emit('change', e.target.innerText)
       }
     }
   }

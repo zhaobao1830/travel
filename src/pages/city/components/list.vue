@@ -25,7 +25,12 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item, key) of cities" :key="key">
+      <div
+        class="area"
+        v-for="(item, key) of cities"
+        :key="key"
+        :ref="key"
+      >
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div
@@ -53,10 +58,23 @@
       hot: {
         type: Array,
         default: () => []
+      },
+      letter: {
+        type: String,
+        default: ''
       }
     },
     mounted () {
       this.scroll = new Bscroll(this.$refs.wrapper)
+    },
+    watch: {
+      letter () {
+        if (this.letter) {
+          // this.$refs[this.letter]是数组，但是scrollToElement需要的是dom元素，所以要在后门加[0]
+          const ele = this.$refs[this.letter][0]
+          this.scroll.scrollToElement(ele)
+        }
+      }
     }
   }
 </script>
