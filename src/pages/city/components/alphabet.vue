@@ -4,6 +4,7 @@
       class="item"
       v-for="item of letters"
       :key="item"
+      :ref="item"
       @click="handleletterClick"
       @touchstart="handleTouchStart"
       @touchmove="handleTouchMove"
@@ -44,7 +45,7 @@
       handleTouchStart () {
         this.touchStatus = true
       },
-      handleTouchMove (E) {
+      handleTouchMove (e) {
         if (this.touchStatus) {
           const startY = this.$refs['A'][0].offsetTop
           const touchY = e.touches[0].clientY - 79
