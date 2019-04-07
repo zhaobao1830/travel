@@ -20,6 +20,7 @@
     name: 'home',
     data () {
       return {
+        lastCity: '',
         swiperList: [],
         iconList: [],
         recommendList: [],
@@ -27,6 +28,7 @@
       }
     },
     mounted () {
+      this.lastCity = this.city
       this.getHomeIndex()
     },
     methods: {
@@ -40,6 +42,12 @@
               this.weekendList = res.data.weekendList
             }
           })
+      }
+    },
+    activated () {
+      if (this.lastCity !== this.city) {
+        this.lastCity = this.city
+        this.getHomeIndex()
       }
     },
     components: {
