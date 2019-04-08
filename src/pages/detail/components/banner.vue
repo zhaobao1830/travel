@@ -12,12 +12,18 @@
         </div>
       </div>
     </div>
+    <common-gallary></common-gallary>
   </div>
 </template>
 
 <script>
+  import CommonGallary from 'common/gallary/Gallary'
+
   export default {
-    name: 'detailBanner'
+    name: 'detailBanner',
+    components: {
+      CommonGallary
+    }
   }
 </script>
 
